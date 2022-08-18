@@ -4,10 +4,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <parent>
-    <artifactId>base-web-parent</artifactId>
     <groupId>com.moyu.framework</groupId>
+    <artifactId>base-dependencies</artifactId>
     <version>${revision}</version>
-    <relativePath>../../base-dependencies/base-web-parent</relativePath>
+    <relativePath>../../base-dependencies</relativePath>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
@@ -24,12 +24,20 @@
 
     <dependency>
       <groupId>com.moyu.framework</groupId>
+      <artifactId>base-web-dependencies</artifactId>
+      <type>pom</type>
+    </dependency>
+
+    <dependency>
+      <groupId>com.moyu.framework</groupId>
       <artifactId>base-swagger-starter</artifactId>
     </dependency>
+
     <dependency>
       <groupId>com.moyu.framework</groupId>
       <artifactId>base-mybatis-starter</artifactId>
     </dependency>
+
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
