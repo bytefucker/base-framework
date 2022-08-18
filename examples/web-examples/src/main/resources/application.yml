@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: web-examples
+moyu:
+  swagger:
+    title: ${spring.application.name}
+    version: 1.0.0
+    description: demo
+    auth-enable: true
+    api-prefix: /api/**
