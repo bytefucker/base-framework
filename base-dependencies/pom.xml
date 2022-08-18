@@ -22,10 +22,11 @@
     <guava.retrying.version>2.0.0</guava.retrying.version>
     <commons.io.version>2.6</commons.io.version>
     <swagger.version>3.0.0</swagger.version>
-    <mybatis.provider.version>2.1.1</mybatis.provider.version>
     <mybatis.version>3.5.10</mybatis.version>
     <mybatis-spring.version>2.0.7</mybatis-spring.version>
     <mybatis-spring-boot.version>2.2.2</mybatis-spring-boot.version>
+    <mybatis.provider.version>2.1.1</mybatis.provider.version>
+    <mybatis.mappper.version>2.0.0</mybatis.mappper.version>
   </properties>
 
   <modules>
@@ -85,6 +86,12 @@
         <artifactId>base-swagger-starter</artifactId>
         <version>${base.version}</version>
       </dependency>
+      <dependency>
+        <groupId>com.moyu.framework</groupId>
+        <artifactId>base-mybatis-starter</artifactId>
+        <version>${base.version}</version>
+      </dependency>
+
 
       <!--三方库-->
       <!--mapstruct-->
@@ -117,11 +124,7 @@
         <artifactId>springfox-boot-starter</artifactId>
         <version>${swagger.version}</version>
       </dependency>
-      <dependency>
-        <groupId>io.mybatis</groupId>
-        <artifactId>mybatis-provider</artifactId>
-        <version>${mybatis.provider.version}</version>
-      </dependency>
+      <!--mybatis-->
       <dependency>
         <groupId>org.mybatis</groupId>
         <artifactId>mybatis</artifactId>
@@ -136,6 +139,16 @@
         <groupId>org.mybatis.spring.boot</groupId>
         <artifactId>mybatis-spring-boot-starter</artifactId>
         <version>${mybatis-spring-boot.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.mybatis</groupId>
+        <artifactId>mybatis-provider</artifactId>
+        <version>${mybatis.provider.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.mybatis</groupId>
+        <artifactId>mybatis-mapper</artifactId>
+        <version>${mybatis.mappper.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

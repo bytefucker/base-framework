@@ -21,12 +21,21 @@
 
 
   <dependencies>
+
     <dependency>
       <groupId>com.moyu.framework</groupId>
       <artifactId>base-swagger-starter</artifactId>
     </dependency>
-  </dependencies>
+    <dependency>
+      <groupId>com.moyu.framework</groupId>
+      <artifactId>base-mybatis-starter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+    </dependency>
 
+  </dependencies>
 
   <build>
     <plugins>

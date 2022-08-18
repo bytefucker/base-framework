@@ -1,5 +1,7 @@
 package com.moyu.examples.service;
 
+import com.moyu.examples.domain.Demo;
+
 /**
  * DemoService
  *
@@ -8,4 +10,5 @@ package com.moyu.examples.service;
  */
 public interface DemoService {
 
+  Demo findById(Long id);
 }

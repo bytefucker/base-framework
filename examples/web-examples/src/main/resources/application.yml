@@ -4,6 +4,20 @@ server:
 spring:
   application:
     name: web-examples
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/moyu
+    username: root
+    password: 123456
+
+logging:
+  level:
+    com:
+      moyu:
+        examples:
+          mapper: debug
+
+
 moyu:
   swagger:
     title: ${spring.application.name}
@@ -11,3 +25,8 @@ moyu:
     description: demo
     auth-enable: true
     api-prefix: /api/**
+
+mybatis:
+  mapper-locations: classpath:mapper/*
+
+
