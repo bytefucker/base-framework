@@ -16,7 +16,7 @@ public class Demo implements Serializable {
   /**
    *
    */
-  @Column(id = true, value = "id")
+  @Column(id = true, value = "id", insertable = false)
   private Long id;
 
   /**
@@ -28,24 +28,24 @@ public class Demo implements Serializable {
   /**
    *
    */
-  @Column(value = "create_by")
+  @Column(value = "create_by", updatable = false)
   private String createBy;
 
   /**
    *
    */
-  @Column(value = "create_time")
+  @Column(value = "create_time", updatable = false)
   private Date createTime;
 
   /**
    *
    */
-  @Column(value = "update_by")
+  @Column(value = "update_by", insertable = false)
   private String updateBy;
 
   /**
    *
    */
-  @Column(value = "update_time")
+  @Column(value = "update_time", insertable = false)
   private Date updateTime;
 }

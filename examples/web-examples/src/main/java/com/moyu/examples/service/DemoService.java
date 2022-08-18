@@ -11,4 +11,6 @@ import com.moyu.examples.domain.Demo;
 public interface DemoService {
 
   Demo findById(Long id);
+
+  Demo insert(Demo demo);
 }

@@ -5,6 +5,8 @@ import com.moyu.examples.service.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,6 +22,12 @@ public class DemoController {
 
   @Autowired
   private DemoService demoService;
+
+
+  @PostMapping("/")
+  public Demo insert(@RequestBody Demo demo) {
+    return demoService.insert(demo);
+  }
 
   @GetMapping("/{id}")
   public Demo findById(@PathVariable Long id) {
