@@ -38,7 +38,7 @@
     <repository>
       <id>github</id>
       <name>GitHub OWNER Apache Maven Packages</name>
-      <url>https://maven.pkg.github.com/yihongzhi/moyu-base-framework</url>
+      <url>https://maven.pkg.github.com/yihongzhi/base-framework</url>
     </repository>
   </distributionManagement>
 
