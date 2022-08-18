@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <parent>
+    <artifactId>base-dependencies</artifactId>
+    <groupId>com.moyu.framework</groupId>
+    <version>${revision}</version>
+    <relativePath>../base-dependencies</relativePath>
+  </parent>
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>base-foundation</artifactId>
+  <packaging>pom</packaging>
+
+  <properties>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+  </properties>
+
+  <modules>
+    <module>base-foundation-core</module>
+    <module>base-foundation-utils</module>
+    <module>base-foundation-exception</module>
+    <module>base-foundation-code</module>
+    <module>base-foundation-format</module>
+    <module>base-foundation-message</module>
+    <module>base-foundation-event</module>
+  </modules>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+</project>
