@@ -1,9 +1,8 @@
 package com.moyu.framework.mybatis.service;
 
-import io.mybatis.mapper.Mapper;
+import com.moyu.framework.mybatis.mapper.BaseMapper;
+import com.moyu.framework.mybatis.model.BaseEntity;
 import java.io.Serializable;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 /**
  * BaseService
@@ -11,11 +10,11 @@ import org.springframework.stereotype.Service;
  * @author yihongzhi
  * @date 2022/8/19
  */
-@Service
-public abstract class BaseService<T, PK extends Serializable> {
+public abstract class BaseService<T extends BaseEntity<PK>, PK extends Serializable> {
 
-  @Autowired
-  private Mapper<T, PK> mapper;
+  private final BaseMapper<T, PK> mapper;
 
-
+  protected BaseService(BaseMapper<T, PK> mapper) {
+    this.mapper = mapper;
+  }
 }
