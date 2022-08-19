@@ -1,15 +1,17 @@
-package com.moyu.framework.mybatis.model;
+package com.moyu.framework.mybatis.entity;
 
 import java.io.Serializable;
 import java.util.Date;
 
 /**
- * BaseEntity
+ * 数据库实体基类，默认继承审计和软删除字段 <br>
+ * 不需要审计和软删除功能可以直接继承Entity接口
  *
  * @author yihongzhi
  * @date 2022/8/19
  */
-public abstract class BaseEntity<PK extends Serializable> implements Auditable, LogicDelete {
+public abstract class BaseEntity<PK extends Serializable> implements Entity<PK>,
+    Auditable, LogicDelete {
 
   private PK id;
 

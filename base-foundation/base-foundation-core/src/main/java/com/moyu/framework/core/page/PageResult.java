@@ -13,6 +13,7 @@ import lombok.Data;
 public class PageResult<T> {
 
   private long totals;
+
   private List<T> records;
 
   public Long getTotals() {

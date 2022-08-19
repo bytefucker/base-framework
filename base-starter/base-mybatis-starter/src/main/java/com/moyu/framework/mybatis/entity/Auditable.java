@@ -1,4 +1,4 @@
-package com.moyu.framework.mybatis.model;
+package com.moyu.framework.mybatis.entity;
 
 import java.util.Date;
 

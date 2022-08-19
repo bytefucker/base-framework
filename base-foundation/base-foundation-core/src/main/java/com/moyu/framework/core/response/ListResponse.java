@@ -1,19 +1,20 @@
-package com.moyu.framework.core.reponse;
+package com.moyu.framework.core.response;
 
+import java.util.List;
 import lombok.Data;
 
 /**
- * DefaultResponse
+ * ListResponse
  *
  * @author yihongzhi
  * @date 2022/8/19
  */
 @Data
-public class DefaultResponse<T> implements Response<T> {
+public class ListResponse<T> implements Response<List<T>> {
 
   private Integer code;
   private String msg;
-  private T data;
+  private List<T> data;
 
   @Override
   public Integer getCode() {
@@ -34,11 +35,11 @@ public class DefaultResponse<T> implements Response<T> {
   }
 
   @Override
-  public T getData() {
+  public List<T> getData() {
     return data;
   }
 
-  public void setData(T data) {
+  public void setData(List<T> data) {
     this.data = data;
   }
 }

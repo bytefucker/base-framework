@@ -1,21 +1,19 @@
-package com.moyu.framework.core.reponse;
+package com.moyu.framework.core.response;
 
-import com.moyu.framework.core.page.PageResult;
-import java.util.List;
 import lombok.Data;
 
 /**
- * ListResponse
+ * DefaultResponse
  *
  * @author yihongzhi
  * @date 2022/8/19
  */
 @Data
-public class PageResponse<T> implements Response<PageResult<T>> {
+public class DefaultResponse<T> implements Response<T> {
 
   private Integer code;
   private String msg;
-  private PageResult<T> data;
+  private T data;
 
   @Override
   public Integer getCode() {
@@ -36,11 +34,11 @@ public class PageResponse<T> implements Response<PageResult<T>> {
   }
 
   @Override
-  public PageResult<T> getData() {
+  public T getData() {
     return data;
   }
 
-  public void setData(PageResult<T> data) {
+  public void setData(T data) {
     this.data = data;
   }
 }

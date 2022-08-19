@@ -1,6 +1,4 @@
-package com.moyu.framework.core.request;
-
-import com.moyu.framework.core.page.Pageable;
+package com.moyu.framework.core.page;
 
 /**
  * PageRequest
@@ -8,12 +6,11 @@ import com.moyu.framework.core.page.Pageable;
  * @author yihongzhi
  * @date 2022/8/19
  */
-public class PageRequest implements Pageable {
+public class PageCondition<T> implements Pageable {
 
   private Integer pageNo;
-
   private Integer pageSize;
-
+  private T condition;
 
   @Override
   public Integer getPageNo() {
@@ -37,5 +34,13 @@ public class PageRequest implements Pageable {
 
   public void setPageSize(Integer pageSize) {
     this.pageSize = pageSize;
+  }
+
+  public T getCondition() {
+    return condition;
+  }
+
+  public void setCondition(T condition) {
+    this.condition = condition;
   }
 }
