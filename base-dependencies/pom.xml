@@ -27,6 +27,7 @@
     <mybatis-spring-boot.version>2.2.2</mybatis-spring-boot.version>
     <mybatis.provider.version>2.1.1</mybatis.provider.version>
     <mybatis.mappper.version>2.0.0</mybatis.mappper.version>
+    <pagehelper.version>5.3.1</pagehelper.version>
   </properties>
 
   <modules>
@@ -85,6 +86,11 @@
       <dependency>
         <groupId>com.moyu.framework</groupId>
         <artifactId>base-foundation-event</artifactId>
+        <version>${base.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.moyu.framework</groupId>
+        <artifactId>base-foundation-core</artifactId>
         <version>${base.version}</version>
       </dependency>
       <!--自定义starter-->
@@ -156,6 +162,11 @@
         <groupId>io.mybatis</groupId>
         <artifactId>mybatis-mapper</artifactId>
         <version>${mybatis.mappper.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.github.pagehelper</groupId>
+        <artifactId>pagehelper</artifactId>
+        <version>${pagehelper.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

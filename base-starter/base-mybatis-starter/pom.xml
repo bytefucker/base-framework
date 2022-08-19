@@ -19,6 +19,15 @@
 
   <dependencies>
     <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.moyu.framework</groupId>
+      <artifactId>base-foundation-core</artifactId>
+    </dependency>
+    <dependency>
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis</artifactId>
     </dependency>
@@ -37,6 +46,10 @@
     <dependency>
       <groupId>io.mybatis</groupId>
       <artifactId>mybatis-mapper</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.github.pagehelper</groupId>
+      <artifactId>pagehelper</artifactId>
     </dependency>
   </dependencies>
 
