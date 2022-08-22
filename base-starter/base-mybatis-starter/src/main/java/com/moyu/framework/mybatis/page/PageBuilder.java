@@ -1,8 +1,8 @@
 package com.moyu.framework.mybatis.page;
 
 import com.github.pagehelper.ISelect;
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import com.moyu.framework.core.page.Page;
 import com.moyu.framework.core.page.Pageable;
 
 /**
@@ -26,8 +26,8 @@ public final class PageBuilder<T> {
     return this;
   }
 
-  public Page<T> build() {
-    com.github.pagehelper.Page<T> page = PageHelper
+  public PageResult<T> build() {
+    Page<T> page = PageHelper
         .startPage(pageable.getPageNo(), pageable.getPageSize(), pageable.getOrderBy())
         .doSelectPage(select);
     return new PageResult<>(page.getTotal(), page.getResult());
