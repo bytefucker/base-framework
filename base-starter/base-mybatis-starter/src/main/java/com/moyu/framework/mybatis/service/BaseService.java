@@ -1,5 +1,6 @@
 package com.moyu.framework.mybatis.service;
 
+import com.moyu.framework.mybatis.page.PageBuilder;
 import com.moyu.framework.mybatis.page.PageCondition;
 import com.moyu.framework.core.page.Page;
 import com.moyu.framework.mybatis.convert.BeanConvert;
@@ -8,6 +9,7 @@ import com.moyu.framework.mybatis.entity.Entity;
 import com.moyu.framework.mybatis.mapper.BaseMapper;
 import java.io.Serializable;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * BaseService
@@ -34,7 +36,9 @@ public abstract class BaseService<D extends DTO, E extends Entity<PK>, PK extend
    */
 
   public List<D> list(D dto) {
-    return null;
+    return baseMapper.selectList(convert.convert(dto))
+        .stream().map(convert::convert)
+        .collect(Collectors.toList());
   }
 
   /**
@@ -45,7 +49,11 @@ public abstract class BaseService<D extends DTO, E extends Entity<PK>, PK extend
    */
 
   public Page<D> page(PageCondition<D> condition) {
-    return null;
+    return new PageBuilder<E>()
+        .pageable(condition)
+        .select(() -> baseMapper.selectList(convert.convert(condition.getCondition())))
+        .build()
+        .map(convert::convert);
   }
 
   /**
@@ -56,8 +64,8 @@ public abstract class BaseService<D extends DTO, E extends Entity<PK>, PK extend
    */
 
   public D queryById(PK id) {
-    //SysUser sysUser = sysUserMapper.selectByPrimaryKey(id).orElse(null);
-    return null;
+    return baseMapper.selectByPrimaryKey(id)
+        .map(convert::convert).orElse(null);
   }
 
   /**
@@ -68,7 +76,9 @@ public abstract class BaseService<D extends DTO, E extends Entity<PK>, PK extend
    */
 
   public D insert(D dto) {
-    return null;
+    E e = this.convert.convert(dto);
+    baseMapper.insert(e);
+    return convert.convert(e);
   }
 
   /**
@@ -78,8 +88,8 @@ public abstract class BaseService<D extends DTO, E extends Entity<PK>, PK extend
    * @return
    */
 
-  public D update(D dto) {
-    return null;
+  public int update(D dto) {
+    return baseMapper.updateByPrimaryKey(convert.convert(dto));
   }
 
   /**
@@ -89,8 +99,8 @@ public abstract class BaseService<D extends DTO, E extends Entity<PK>, PK extend
    * @return
    */
 
-  public D deleteById(PK id) {
-    return null;
+  public int deleteById(PK id) {
+    return baseMapper.deleteByPrimaryKey(id);
   }
 
 }
