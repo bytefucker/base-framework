@@ -1,17 +1,32 @@
 package com.moyu.framework.core.response;
 
 /**
- * Reponse
+ * Response
  *
  * @author yihongzhi
  * @date 2022/8/19
  */
 public interface Response<T> {
 
+  /**
+   * 返回码
+   *
+   * @return
+   */
   Integer getCode();
 
+  /**
+   * 返回消息
+   *
+   * @return
+   */
   String getMsg();
 
+  /**
+   * 返回数据
+   *
+   * @return
+   */
   T getData();
 
 }

@@ -12,4 +12,6 @@ public interface Pageable {
 
   Integer getPageSize();
 
+  String getOrderBy();
+
 }

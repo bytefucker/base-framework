@@ -27,12 +27,11 @@
     <mybatis-spring-boot.version>2.2.2</mybatis-spring-boot.version>
     <mybatis.provider.version>2.1.1</mybatis.provider.version>
     <mybatis.mappper.version>2.0.0</mybatis.mappper.version>
-    <pagehelper.version>5.3.1</pagehelper.version>
+    <pagehelper-spring-boot-starter.version>1.4.3</pagehelper-spring-boot-starter.version>
   </properties>
 
   <modules>
     <module>base-web-dependencies</module>
-    <module>base-mapstruct-dependencies</module>
   </modules>
 
   <dependencyManagement>
@@ -166,8 +165,8 @@
       </dependency>
       <dependency>
         <groupId>com.github.pagehelper</groupId>
-        <artifactId>pagehelper</artifactId>
-        <version>${pagehelper.version}</version>
+        <artifactId>pagehelper-spring-boot-starter</artifactId>
+        <version>${pagehelper-spring-boot-starter.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

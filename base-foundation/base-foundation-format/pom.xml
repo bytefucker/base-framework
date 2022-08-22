@@ -21,6 +21,10 @@
   <dependencies>
     <dependency>
       <groupId>com.moyu.framework</groupId>
+      <artifactId>base-foundation-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.moyu.framework</groupId>
       <artifactId>base-foundation-code</artifactId>
     </dependency>
     <dependency>

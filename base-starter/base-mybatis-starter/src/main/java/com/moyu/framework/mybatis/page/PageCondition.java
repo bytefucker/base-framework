@@ -1,4 +1,6 @@
-package com.moyu.framework.core.page;
+package com.moyu.framework.mybatis.page;
+
+import com.moyu.framework.core.page.Pageable;
 
 /**
  * PageRequest
@@ -10,6 +12,7 @@ public class PageCondition<T> implements Pageable {
 
   private Integer pageNo;
   private Integer pageSize;
+  private String orderBy;
   private T condition;
 
   @Override
@@ -34,6 +37,15 @@ public class PageCondition<T> implements Pageable {
 
   public void setPageSize(Integer pageSize) {
     this.pageSize = pageSize;
+  }
+
+  @Override
+  public String getOrderBy() {
+    return orderBy;
+  }
+
+  public void setOrderBy(String orderBy) {
+    this.orderBy = orderBy;
   }
 
   public T getCondition() {

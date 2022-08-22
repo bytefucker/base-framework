@@ -1,6 +1,8 @@
 package com.moyu.framework.core.response;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * DefaultResponse
@@ -9,6 +11,8 @@ import lombok.Data;
  * @date 2022/8/19
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class DefaultResponse<T> implements Response<T> {
 
   private Integer code;

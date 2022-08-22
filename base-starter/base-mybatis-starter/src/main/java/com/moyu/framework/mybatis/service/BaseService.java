@@ -1,7 +1,7 @@
 package com.moyu.framework.mybatis.service;
 
-import com.moyu.framework.core.page.PageCondition;
-import com.moyu.framework.core.page.PageResult;
+import com.moyu.framework.mybatis.page.PageCondition;
+import com.moyu.framework.core.page.Page;
 import com.moyu.framework.mybatis.convert.BeanConvert;
 import com.moyu.framework.mybatis.dto.DTO;
 import com.moyu.framework.mybatis.entity.Entity;
@@ -44,7 +44,7 @@ public abstract class BaseService<D extends DTO, E extends Entity<PK>, PK extend
    * @return
    */
 
-  public PageResult<D> page(PageCondition<D> condition) {
+  public Page<D> page(PageCondition<D> condition) {
     return null;
   }
 
