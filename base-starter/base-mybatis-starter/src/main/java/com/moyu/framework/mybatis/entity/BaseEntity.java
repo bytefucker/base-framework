@@ -1,11 +1,11 @@
 package com.moyu.framework.mybatis.entity;
 
+import io.mybatis.provider.Entity.Column;
 import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 数据库实体基类，默认继承审计和软删除字段 <br>
- * 不需要审计和软删除功能可以直接继承Entity接口
+ * 数据库实体基类，默认继承审计和软删除字段 <br> 不需要审计和软删除功能可以直接继承Entity接口
  *
  * @author yihongzhi
  * @date 2022/8/19
@@ -13,16 +13,22 @@ import java.util.Date;
 public abstract class BaseEntity<PK extends Serializable> implements Entity<PK>,
     Auditable, LogicDelete {
 
+  @Column(value = "id", id = true)
   private PK id;
 
+  @Column(value = "deleted")
   private Integer deleted;
 
+  @Column(value = "create_by", insertable = true, updatable = false)
   private String createBy;
 
+  @Column(value = "create_time", insertable = true, updatable = false)
   private Date createTime;
 
+  @Column(value = "update_by", insertable = false, updatable = true)
   private String updateBy;
 
+  @Column(value = "update_time", insertable = false, updatable = true)
   private Date updateTime;
 
 
