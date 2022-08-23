@@ -1,5 +1,6 @@
 package com.moyu.framework.mybatis.entity;
 
+import com.moyu.framework.core.entity.Entity;
 import io.mybatis.provider.Entity.Column;
 import java.io.Serializable;
 import java.util.Date;
@@ -10,8 +11,8 @@ import java.util.Date;
  * @author yihongzhi
  * @date 2022/8/19
  */
-public abstract class BaseEntity<PK extends Serializable> implements Entity<PK>,
-    Auditable, LogicDelete {
+public abstract class BaseEntity<PK extends Serializable> implements Entity<PK>, Auditable,
+    LogicDelete {
 
   @Column(value = "id", id = true)
   private PK id;

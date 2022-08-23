@@ -1,6 +1,6 @@
 package com.moyu.framework.mybatis.mapper;
 
-import com.moyu.framework.mybatis.entity.Entity;
+import com.moyu.framework.core.entity.Entity;
 import io.mybatis.mapper.Mapper;
 import java.io.Serializable;
 

@@ -1,7 +1,7 @@
 package com.moyu.framework.mybatis.convert;
 
-import com.moyu.framework.mybatis.dto.DTO;
-import com.moyu.framework.mybatis.entity.Entity;
+import com.moyu.framework.core.dto.DTO;
+import com.moyu.framework.core.entity.Entity;
 
 /**
  * 实体转换接口

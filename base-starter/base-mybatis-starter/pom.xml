@@ -25,7 +25,7 @@
     </dependency>
     <dependency>
       <groupId>com.moyu.framework</groupId>
-      <artifactId>base-foundation-core</artifactId>
+      <artifactId>base-foundation-format</artifactId>
     </dependency>
     <dependency>
       <groupId>org.mybatis</groupId>
