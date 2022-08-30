@@ -49,10 +49,9 @@ public class PageResult<T> implements Page<T> {
    * @return
    */
   public <R> PageResult<R> map(Function<T, R> function) {
-    return new PageResult<R>(
+    return new PageResult<>(
         this.getTotals(),
-        this.getRecords().stream()
-            .map(function).collect(Collectors.toList())
+        this.getRecords().stream().map(function).collect(Collectors.toList())
     );
   }
 }

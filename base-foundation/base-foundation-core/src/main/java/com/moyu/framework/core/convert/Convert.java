@@ -1,15 +1,15 @@
-package com.moyu.framework.mybatis.convert;
+package com.moyu.framework.core.convert;
 
 import com.moyu.framework.core.dto.DTO;
 import com.moyu.framework.core.entity.Entity;
 
 /**
- * 实体转换接口
+ * 实体,DTO转换接口
  *
  * @author yihongzhi
  * @date 2022/8/19
  */
-public interface BeanConvert<E extends Entity, D extends DTO> {
+public interface Convert<E extends Entity<?>, D extends DTO> {
 
   /**
    * DTO转数据库实体
@@ -17,7 +17,7 @@ public interface BeanConvert<E extends Entity, D extends DTO> {
    * @param dto
    * @return
    */
-  E convert(D dto);
+  E toEntity(D dto);
 
   /**
    * 数据库实体转DTO
@@ -25,6 +25,6 @@ public interface BeanConvert<E extends Entity, D extends DTO> {
    * @param entity
    * @return
    */
-  D convert(E entity);
+  D toDTO(E entity);
 
 }
