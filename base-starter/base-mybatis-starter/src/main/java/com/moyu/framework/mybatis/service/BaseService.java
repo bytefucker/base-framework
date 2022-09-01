@@ -1,39 +1,39 @@
 package com.moyu.framework.mybatis.service;
 
 import com.moyu.framework.core.convert.Convert;
-import com.moyu.framework.core.dto.DTO;
 import com.moyu.framework.core.entity.Entity;
+import com.moyu.framework.core.vo.VO;
 import com.moyu.framework.mybatis.exception.DBOperationException;
 import com.moyu.framework.mybatis.mapper.BaseMapper;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
- * BaseService
+ * 增删改查基础service
  *
  * @author yihongzhi
  * @date 2022/8/19
  */
-public abstract class BaseService<E extends Entity<PK>, PK extends Serializable, D extends DTO>
-    implements Service<E, PK, D> {
+public abstract class BaseService<E extends Entity<PK>, PK extends Serializable, V extends VO>
+    implements Service<E, PK, V> ,Convert<E,V> {
 
-  @Autowired
-  private BaseMapper<E, PK> baseMapper;
-  @Autowired
-  private Convert<E, D> convert;
+  private final BaseMapper<E, PK> baseMapper;
+
+  public BaseService(BaseMapper<E, PK> baseMapper) {
+    this.baseMapper = baseMapper;
+  }
 
   /**
    * 插入数据返回主键
    *
-   * @param dto
+   * @param vo
    * @return
    */
   @Override
-  public PK insert(D dto) {
-    E e = this.convert.toEntity(dto);
+  public PK insert(V vo) {
+    E e = this.mapTo(vo);
     if (baseMapper.insert(e) == 0) {
       throw new DBOperationException("数据插入失败");
     }
@@ -46,9 +46,10 @@ public abstract class BaseService<E extends Entity<PK>, PK extends Serializable,
    * @param list
    */
   @Override
-  public void batchInsert(List<D> list) {
-    List<E> collect = list.stream().map(convert::toEntity).collect(Collectors.toList());
-    if (baseMapper.insertList(collect) == 0) {
+  public void batchInsert(List<V> list) {
+    List<E> collect = list.stream()
+        .map(this::mapTo).collect(Collectors.toList());
+    if (baseMapper.insertList(collect) != list.size()) {
       throw new DBOperationException("数据批量插入失败");
     }
   }
@@ -57,11 +58,11 @@ public abstract class BaseService<E extends Entity<PK>, PK extends Serializable,
    * 根据id更新数据
    *
    * @param id
-   * @param dto
+   * @param vo
    */
   @Override
-  public void updateById(PK id, D dto) {
-    E e = this.convert.toEntity(dto);
+  public void updateById(PK id, V vo) {
+    E e =this.mapTo(vo);
     e.setId(id);
     if (baseMapper.updateByPrimaryKeySelective(e) == 0) {
       throw new DBOperationException("数据更新失败");
@@ -87,21 +88,7 @@ public abstract class BaseService<E extends Entity<PK>, PK extends Serializable,
    * @return
    */
   @Override
-  public Optional<D> queryById(PK id) {
-    return baseMapper.selectByPrimaryKey(id).map(convert::toDTO);
-  }
-
-  /**
-   * 根据条件查询列表
-   *
-   * @param dto
-   * @return
-   */
-  @Override
-  public List<D> list(D dto) {
-    E e = this.convert.toEntity(dto);
-    return baseMapper.selectList(e)
-        .stream().map(convert::toDTO)
-        .collect(Collectors.toList());
+  public Optional<V> queryById(PK id) {
+    return baseMapper.selectByPrimaryKey(id).map(this::mapTo);
   }
 }

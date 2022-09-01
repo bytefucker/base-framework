@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * DefaultResponse
+ * ResponseResult
  *
  * @author yihongzhi
  * @date 2022/8/19
@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class DefaultResponse<T> implements Response<T> {
+public class ResponseResult<T> implements Result<T> {
 
   private Integer code;
   private String msg;

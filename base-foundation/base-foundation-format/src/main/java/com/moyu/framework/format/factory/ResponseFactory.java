@@ -1,7 +1,7 @@
 package com.moyu.framework.format.factory;
 
-import com.moyu.framework.core.response.DefaultResponse;
-import com.moyu.framework.core.response.Response;
+import com.moyu.framework.core.response.ResponseResult;
+import com.moyu.framework.core.response.Result;
 import org.springframework.util.Assert;
 
 /**
@@ -14,20 +14,20 @@ public class ResponseFactory {
 
   public static final ResponseFactory FACTORY = new ResponseFactory();
 
-  public <T> Response<T> build(Integer code, String msg, T data) {
+  public <T> Result<T> build(Integer code, String msg, T data) {
     Assert.notNull(code, "code can't be null");
-    return new DefaultResponse<>(code, msg, data);
+    return new ResponseResult<>(code, msg, data);
   }
 
-  public <T> Response<T> build(Integer code, T data) {
+  public <T> Result<T> build(Integer code, T data) {
     return build(code, "", data);
   }
 
-  public <T> Response<T> buildSuccess() {
+  public <T> Result<T> buildSuccess() {
     return build(0, "", null);
   }
 
-  public <T> Response<T> buildSuccess(T data) {
+  public <T> Result<T> buildSuccess(T data) {
     return build(0, "", data);
   }
 }

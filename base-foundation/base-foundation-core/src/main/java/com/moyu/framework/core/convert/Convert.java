@@ -1,30 +1,29 @@
 package com.moyu.framework.core.convert;
 
-import com.moyu.framework.core.dto.DTO;
 import com.moyu.framework.core.entity.Entity;
+import com.moyu.framework.core.vo.VO;
 
 /**
- * 实体,DTO转换接口
+ * 实体,VO转换接口
  *
  * @author yihongzhi
  * @date 2022/8/19
  */
-public interface Convert<E extends Entity<?>, D extends DTO> {
+public interface Convert<E extends Entity<?>, V extends VO> {
+
 
   /**
-   * DTO转数据库实体
-   *
-   * @param dto
+   * VO转实体
+   * @param v
    * @return
    */
-  E toEntity(D dto);
+  E mapTo(V v);
 
   /**
-   * 数据库实体转DTO
-   *
-   * @param entity
+   * 实体转VO
+   * @param e
    * @return
    */
-  D toDTO(E entity);
+  V mapTo(E e);
 
 }

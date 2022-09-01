@@ -1,12 +1,12 @@
 package com.moyu.framework.core.response;
 
 /**
- * Response
+ * Result
  *
  * @author yihongzhi
  * @date 2022/8/19
  */
-public interface Response<T> {
+public interface Result<T> {
 
   /**
    * 返回码
