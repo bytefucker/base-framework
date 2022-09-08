@@ -49,7 +49,7 @@ public final class ServletUtil {
    * @param request
    * @return
    */
-  public String getAuthorization(HttpServletRequest request) {
+  public static String getAuthorization(HttpServletRequest request) {
     String authorization = request.getHeader(AUTHORIZATION);
     if (StringUtils.isEmpty(authorization)) {
       return null;
