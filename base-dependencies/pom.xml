@@ -10,6 +10,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>base-dependencies</artifactId>
+
   <packaging>pom</packaging>
 
   <properties>
@@ -30,10 +31,6 @@
     <pagehelper-spring-boot-starter.version>1.4.3</pagehelper-spring-boot-starter.version>
   </properties>
 
-  <modules>
-    <module>base-web-dependencies</module>
-  </modules>
-
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -49,13 +46,6 @@
         <version>${spring.cloud.version}</version>
         <type>pom</type>
         <scope>import</scope>
-      </dependency>
-      <!--自定义dependencies-->
-      <dependency>
-        <groupId>com.moyu.framework</groupId>
-        <artifactId>base-web-dependencies</artifactId>
-        <version>${base.version}</version>
-        <type>pom</type>
       </dependency>
       <!--自定义框架模块-->
       <dependency>
@@ -104,7 +94,11 @@
         <artifactId>base-mybatis-starter</artifactId>
         <version>${base.version}</version>
       </dependency>
-
+      <dependency>
+        <groupId>com.moyu.framework</groupId>
+        <artifactId>base-web-starter</artifactId>
+        <version>${base.version}</version>
+      </dependency>
 
       <!--三方库-->
       <!--mapstruct-->
@@ -171,13 +165,19 @@
     </dependencies>
   </dependencyManagement>
 
+  <repositories>
+    <repository>
+      <id>github</id>
+      <url>https://maven.pkg.github.com/bytefucker/base-framework</url>
+    </repository>
+  </repositories>
+
   <build>
     <pluginManagement>
       <plugins>
         <plugin>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-maven-plugin</artifactId>
-          <version>2.5.14</version>
         </plugin>
       </plugins>
     </pluginManagement>

@@ -16,6 +16,7 @@
   <modules>
     <module>base-swagger-starter</module>
     <module>base-mybatis-starter</module>
+    <module>base-web-starter</module>
   </modules>
 
   <properties>

@@ -5,8 +5,8 @@ spring:
   application:
     name: web-examples
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/moyu
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:~/test
     username: root
     password: 123456
 
@@ -25,6 +25,15 @@ moyu:
     description: demo
     auth-enable: true
     api-prefix: /api/**
+  web:
+    enable-rest-wrapper: true
+    cors:
+      enable: false
+      allowed-headers: [ '*' ]
+      allowed-methods: [ '*' ]
+      allowed-origins: [ '*' ]
+      max-age: 3600
+
 
 mybatis:
   mapper-locations: classpath:mapper/*

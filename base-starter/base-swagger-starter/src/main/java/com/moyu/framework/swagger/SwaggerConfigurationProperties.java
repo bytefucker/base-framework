@@ -1,7 +1,6 @@
 package com.moyu.framework.swagger;
 
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import springfox.documentation.spi.DocumentationType;
 
@@ -21,7 +20,7 @@ public class SwaggerConfigurationProperties {
 
   private String description = "";
 
-  private DocumentationType type = DocumentationType.OAS_30;
+  private DocumentationType type = DocumentationType.SWAGGER_2;
 
   private String apiPrefix = "/api/**";
 

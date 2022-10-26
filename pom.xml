@@ -29,7 +29,7 @@
 
   <developers>
     <developer>
-      <name>yihongzhi</name>
+      <name>byte-fucker</name>
       <email>723861898@qq.com</email>
     </developer>
   </developers>
@@ -38,7 +38,7 @@
     <repository>
       <id>github</id>
       <name>GitHub OWNER Apache Maven Packages</name>
-      <url>https://maven.pkg.github.com/yihongzhi/base-framework</url>
+      <url>https://maven.pkg.github.com/bytefucker/base-framework</url>
     </repository>
   </distributionManagement>
 

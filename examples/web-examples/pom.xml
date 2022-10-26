@@ -21,28 +21,22 @@
 
 
   <dependencies>
-
     <dependency>
       <groupId>com.moyu.framework</groupId>
-      <artifactId>base-web-dependencies</artifactId>
-      <type>pom</type>
+      <artifactId>base-web-starter</artifactId>
     </dependency>
-
     <dependency>
       <groupId>com.moyu.framework</groupId>
       <artifactId>base-swagger-starter</artifactId>
     </dependency>
-
     <dependency>
       <groupId>com.moyu.framework</groupId>
       <artifactId>base-mybatis-starter</artifactId>
     </dependency>
-
     <dependency>
-      <groupId>mysql</groupId>
-      <artifactId>mysql-connector-java</artifactId>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
     </dependency>
-
   </dependencies>
 
   <build>
