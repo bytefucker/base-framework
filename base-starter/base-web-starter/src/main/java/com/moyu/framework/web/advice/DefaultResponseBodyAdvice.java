@@ -1,7 +1,7 @@
 package com.moyu.framework.web.advice;
 
-import com.moyu.framework.core.response.ResponseResult;
-import com.moyu.framework.core.response.Result;
+import com.moyu.framework.core.response.DefaultResponse;
+import com.moyu.framework.core.response.Response;
 import java.lang.reflect.Method;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
@@ -32,9 +32,9 @@ public class DefaultResponseBodyAdvice implements ResponseBodyAdvice<Object> {
   public Object beforeBodyWrite(Object body, MethodParameter returnType,
       MediaType selectedContentType, Class<? extends HttpMessageConverter<?>> selectedConverterType,
       ServerHttpRequest request, ServerHttpResponse response) {
-    if (body instanceof Result) {
+    if (body instanceof Response) {
       return body;
     }
-    return new ResponseResult<>(0, "", body);
+    return new DefaultResponse<>(0, "", body);
   }
 }

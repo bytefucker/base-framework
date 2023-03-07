@@ -6,7 +6,7 @@ package com.moyu.framework.core.response;
  * @author yihongzhi
  * @date 2022/8/19
  */
-public interface Result<T> {
+public interface Response<T> {
 
   /**
    * 返回码
