@@ -4,12 +4,16 @@ import io.mybatis.provider.Entity;
 import io.mybatis.provider.Entity.Column;
 import java.io.Serializable;
 import java.util.Date;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @TableName demo
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity.Table(value = "demo")
 public class Demo implements Serializable {
 

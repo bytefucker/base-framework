@@ -18,7 +18,7 @@ public class WebConfigurationProperties {
   /**
    * 打开rest请求包装
    */
-  private Boolean enableRestWrapper = false;
+  private Boolean enableRestWrapper = true;
 
   /**
    * 跨域请求支持

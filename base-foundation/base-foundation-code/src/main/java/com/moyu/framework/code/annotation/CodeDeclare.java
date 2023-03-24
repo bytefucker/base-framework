@@ -8,12 +8,6 @@ import java.lang.annotation.Target;
 
 @Target({FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-/**
- * 1、key的顺序：
- * 优先获取i18nKey，没有，获取msg，没有，获取枚举name
- * 2、msg信息（拿着上一步的key去获取国际化）：
- * 优先获取i18nKey对应的
- */
 public @interface CodeDeclare {
 
   /**

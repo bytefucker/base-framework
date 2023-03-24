@@ -19,12 +19,6 @@ logging:
 
 
 moyu:
-  swagger:
-    title: ${spring.application.name}
-    version: 1.0.0
-    description: demo
-    auth-enable: true
-    api-prefix: /api/**
   web:
     enable-rest-wrapper: true
     cors:

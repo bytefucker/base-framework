@@ -1,7 +1,6 @@
 package com.moyu.framework.exception;
 
 /**
- *
  * @ClassName: InstanceException.java<br>
  * @Description: 实例生成异常
  * @author:

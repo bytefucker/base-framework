@@ -9,6 +9,7 @@ import com.moyu.framework.message.i18n.Section;
 
 @Section(BASE_FRAMEWORK_GROUP)
 public enum DefaultNormalDefine implements NormalDefine {
+
   /**
    * 成功
    */

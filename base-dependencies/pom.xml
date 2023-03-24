@@ -17,8 +17,9 @@
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <spring.boot.version>2.5.14</spring.boot.version>
-    <spring.cloud.version>2020.0.6</spring.cloud.version>
+    <spring-boot.version>2.7.1</spring-boot.version>
+    <spring-cloud.version>2021.0.3</spring-cloud.version>
+    <spring-cloud-alibaba.version>2021.0.1.0</spring-cloud-alibaba.version>
     <mapstruct.version>1.5.2.Final</mapstruct.version>
     <guava.retrying.version>2.0.0</guava.retrying.version>
     <commons.io.version>2.6</commons.io.version>
@@ -36,14 +37,21 @@
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
-        <version>${spring.boot.version}</version>
+        <version>${spring-boot.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-dependencies</artifactId>
-        <version>${spring.cloud.version}</version>
+        <version>${spring-cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+        <version>${spring-cloud-alibaba.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

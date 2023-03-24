@@ -7,8 +7,8 @@ import org.slf4j.helpers.MessageFormatter;
 /**
  * 异常类基类
  */
-@EqualsAndHashCode(callSuper = true)
 @Data
+@EqualsAndHashCode(callSuper = true)
 public abstract class BaseException extends RuntimeException {
 
   private Integer code;

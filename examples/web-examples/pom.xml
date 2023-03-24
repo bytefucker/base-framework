@@ -22,12 +22,13 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.moyu.framework</groupId>
-      <artifactId>base-web-starter</artifactId>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>com.moyu.framework</groupId>
-      <artifactId>base-swagger-starter</artifactId>
+      <artifactId>base-web-starter</artifactId>
     </dependency>
     <dependency>
       <groupId>com.moyu.framework</groupId>

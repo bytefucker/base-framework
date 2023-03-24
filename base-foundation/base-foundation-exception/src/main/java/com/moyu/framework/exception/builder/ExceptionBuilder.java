@@ -77,7 +77,6 @@ public class ExceptionBuilder<T extends BaseException> {
    */
   public T build() {
     T exception;
-
     // 此判断用于避免大多数情况使用反射
     if (exceptionClass == DefaultBaseException.class) {
       //noinspection unchecked

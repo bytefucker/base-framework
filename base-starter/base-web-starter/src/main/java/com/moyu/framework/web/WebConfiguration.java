@@ -1,6 +1,7 @@
 package com.moyu.framework.web;
 
 import com.moyu.framework.web.advice.DefaultResponseBodyAdvice;
+import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -10,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 /**
@@ -21,12 +23,12 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 @Slf4j
 @EnableConfigurationProperties(WebConfigurationProperties.class)
 @Configuration
-public class WebConfiguration {
+public class WebConfiguration implements WebMvcConfigurer {
 
 
   @Bean
   @ConditionalOnProperty(value = "moyu.web.enable-rest-wrapper", havingValue = "true")
-  public ResponseBodyAdvice restControllerAdvice() {
+  public ResponseBodyAdvice restControllerAdvice(List<ResponseBodyAdvice> advices) {
     return new DefaultResponseBodyAdvice();
   }
 

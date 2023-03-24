@@ -14,7 +14,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
+/**
+ * 错误码定义接口
+ */
 public interface ErrorDefine extends Format {
 
   Logger log = LoggerFactory.getLogger(ErrorDefine.class);
@@ -101,7 +103,7 @@ public interface ErrorDefine extends Format {
         Field emInstance = this.getClass().getField(em.name());
         CodeDeclare codeDeclare = codeDeclare();
         if (codeDeclare == null) {
-          throw DefaultErrorDefine.UNSTANDARD_CONFIG_ERROR.exception();
+          throw new RuntimeException("CodeDeclare未配置");
         }
         ExceptionDeclare exception = exceptionDeclare(emInstance);
         Class<? extends BaseException> exceptionClass =
@@ -126,13 +128,12 @@ public interface ErrorDefine extends Format {
             .build();
       } catch (NoSuchFieldException e) {
         log.error("异常码定义配置不规范:", e);
-        throw DefaultErrorDefine.UNSTANDARD_CONFIG_ERROR.exception(e);
       }
     }
     // 以下情况：不是枚举、没拿到注解，会进入此判断
     if (baseException == null) {
       // 返回未知错误
-      throw DefaultErrorDefine.UNSTANDARD_CONFIG_ERROR.exception();
+      throw new DefaultBaseException();
     }
     return baseException;
   }

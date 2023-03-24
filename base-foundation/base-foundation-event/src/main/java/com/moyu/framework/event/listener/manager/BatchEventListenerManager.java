@@ -49,7 +49,6 @@ public class BatchEventListenerManager extends AbstractEventListenerManager impl
     if (batchListenerMapping == null || batchListenerMapping.isEmpty()) {
       return;
     }
-
     Map<Class<?>, List<DomainEventBase<?>>> groupedRecords = events.stream()
         .collect(Collectors.groupingBy(DomainEventBase::getClass));
     groupedRecords.forEach((k, groupedEvents) -> {
@@ -57,7 +56,6 @@ public class BatchEventListenerManager extends AbstractEventListenerManager impl
       if (listeners == null) {
         return;
       }
-
       listeners.forEach(listener -> eventListenerExecutor.execute(() -> {
         listener.onEvent(groupedEvents);
       }));

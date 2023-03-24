@@ -25,25 +25,26 @@ public class CodeParser {
   public static CodeDeclare parse(CodeDeclare code, String objName) {
     try {
       // 获取到了注解
-      if (code != null) {
-        // 如果没有配置i18nKey或msg（仅会进入一次）
-        if (StringUtils.isEmpty(code.i18nKey()) || StringUtils.isEmpty(code.msg())) {
-          // 此时需要将msg赋值为枚举name
-          // 获取codeDecalre注解实例的invocationHandler
-          InvocationHandler handler = Proxy.getInvocationHandler(code);
-          // 获取handler中的memberValues
-          Field codeField = handler.getClass().getDeclaredField(MEMBER_VALUES);
-          // 设置为可访问
-          codeField.setAccessible(true);
-          Map<String, Object> memberValues = (Map<String, Object>) codeField.get(handler);
-          // 修改msg属性值
-          if (StringUtils.isEmpty(code.msg())) {
-            memberValues.put(FIELD_MSG, objName);
-          }
-          // 修改i8nKey属性值
-          if (StringUtils.isEmpty(code.i18nKey())) {
-            memberValues.put(FIELD_I18N_KEY, code.msg());
-          }
+      if (code == null) {
+        return null;
+      }
+      // 如果没有配置i18nKey或msg（仅会进入一次）
+      if (StringUtils.isEmpty(code.i18nKey()) || StringUtils.isEmpty(code.msg())) {
+        // 此时需要将msg赋值为枚举name
+        // 获取codeDecalre注解实例的invocationHandler
+        InvocationHandler handler = Proxy.getInvocationHandler(code);
+        // 获取handler中的memberValues
+        Field codeField = handler.getClass().getDeclaredField(MEMBER_VALUES);
+        // 设置为可访问
+        codeField.setAccessible(true);
+        Map<String, Object> memberValues = (Map<String, Object>) codeField.get(handler);
+        // 修改msg属性值
+        if (StringUtils.isEmpty(code.msg())) {
+          memberValues.put(FIELD_MSG, objName);
+        }
+        // 修改i8nKey属性值
+        if (StringUtils.isEmpty(code.i18nKey())) {
+          memberValues.put(FIELD_I18N_KEY, code.msg());
         }
       }
     } catch (NoSuchFieldException e) {
