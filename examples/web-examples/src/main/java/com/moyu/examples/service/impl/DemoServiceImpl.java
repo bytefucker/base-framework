@@ -3,7 +3,7 @@ package com.moyu.examples.service.impl;
 import com.moyu.examples.domain.Demo;
 import com.moyu.examples.mapper.DemoMapper;
 import com.moyu.examples.service.DemoService;
-import java.util.Optional;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,5 +29,10 @@ public class DemoServiceImpl implements DemoService {
   public Demo insert(Demo demo) {
     demoMapper.insert(demo);
     return demo;
+  }
+
+  @Override
+  public List<Demo> list() {
+    return demoMapper.selectList(null);
   }
 }

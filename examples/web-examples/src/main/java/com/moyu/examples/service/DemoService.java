@@ -1,6 +1,7 @@
 package com.moyu.examples.service;
 
 import com.moyu.examples.domain.Demo;
+import java.util.List;
 
 /**
  * DemoService
@@ -13,4 +14,7 @@ public interface DemoService {
   Demo findById(Long id);
 
   Demo insert(Demo demo);
+
+
+  List<Demo> list();
 }

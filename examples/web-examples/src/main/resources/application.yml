@@ -4,11 +4,19 @@ server:
 spring:
   application:
     name: web-examples
+  jackson:
+    date-format: "yyyy-MM-dd HH:mm:ss"
   datasource:
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:~/test
-    username: root
-    password: 123456
+    url: jdbc:h2:mem:demo
+    username: sa
+    password:
+  sql:
+    init:
+      platform: h2
+      schema-locations: classpath*:db/schema.sql
+      data-locations: classpath*:db/data.sql
+      encoding: utf-8
 
 logging:
   level:
@@ -18,15 +26,15 @@ logging:
           mapper: debug
 
 
-moyu:
-  web:
-    enable-rest-wrapper: true
-    cors:
-      enable: false
-      allowed-headers: [ '*' ]
-      allowed-methods: [ '*' ]
-      allowed-origins: [ '*' ]
-      max-age: 3600
+web:
+  enable-rest-wrapper: true
+  cors:
+    enable: true
+    allowed-headers: [ '*' ]
+    allowed-methods: [ '*' ]
+    allowed-origins: [ '*' ]
+    max-age: 3600
+
 
 
 mybatis:

@@ -26,18 +26,16 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 @Configuration
 public class WebConfiguration {
 
-
   @Bean
-  @ConditionalOnProperty(value = "moyu.web.enable-rest-wrapper", havingValue = "true")
+  @ConditionalOnProperty(value = "web.enable-rest-wrapper", havingValue = "true")
   public ResponseBodyAdvice restControllerAdvice() {
     log.info("----------------ResponseBodyAdvice注册成功-------------------");
     return new DefaultResponseBodyAdvice();
   }
 
-
   @Bean
   @ConditionalOnMissingBean
-  @ConditionalOnProperty(value = "moyu.web.cors.enable", havingValue = "true")
+  @ConditionalOnProperty(value = "web.cors.enable", havingValue = "true")
   public CorsFilter corsFilter(WebConfigurationProperties properties) {
     CorsConfiguration config = new CorsConfiguration();
     config.setAllowedOrigins(properties.getCors().getAllowedOrigins()); // 设置访问源地址

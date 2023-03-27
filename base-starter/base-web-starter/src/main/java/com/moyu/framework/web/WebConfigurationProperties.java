@@ -12,7 +12,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @date 2022/10/26
  */
 @Data
-@ConfigurationProperties("moyu.web")
+@ConfigurationProperties("framework.web")
 public class WebConfigurationProperties {
 
   /**
