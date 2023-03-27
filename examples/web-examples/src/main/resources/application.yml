@@ -7,16 +7,12 @@ spring:
   jackson:
     date-format: "yyyy-MM-dd HH:mm:ss"
   datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:demo
-    username: sa
-    password:
-  sql:
-    init:
-      platform: h2
-      schema-locations: classpath*:db/schema.sql
-      data-locations: classpath*:db/data.sql
-      encoding: utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://mysql.default.svc.cluster.local:3306/admin-template
+    username: root
+    password: 8vB5Unc28z
+  flyway:
+    enabled: true
 
 logging:
   level:
