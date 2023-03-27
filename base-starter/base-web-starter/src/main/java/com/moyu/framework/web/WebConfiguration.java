@@ -1,12 +1,18 @@
 package com.moyu.framework.web;
 
 import com.moyu.framework.web.advice.DefaultResponseBodyAdvice;
+import java.util.stream.Collectors;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.boot.autoconfigure.web.ServerProperties;
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
+import org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController;
+import org.springframework.boot.autoconfigure.web.servlet.error.ErrorViewResolver;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.web.servlet.error.ErrorAttributes;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
@@ -45,5 +51,12 @@ public class WebConfiguration {
     source.registerCorsConfiguration("/**", config);
     log.info("----------------注册跨域拦截器成功:{}----------------", properties.getCors());
     return new CorsFilter(source);
+  }
+
+  @Bean
+  public BasicErrorController basicErrorController(ErrorAttributes errorAttributes,
+      ObjectProvider<ErrorViewResolver> errorViewResolvers, ServerProperties serverProperties) {
+    return new BasicErrorController(errorAttributes, serverProperties.getError(),
+        errorViewResolvers.orderedStream().collect(Collectors.toList()));
   }
 }
