@@ -120,7 +120,7 @@ public interface ErrorDefine extends Format {
         }
         // 构造异常实例
         baseException = ExceptionBuilder.builder(exceptionClass)
-            .code(codeDeclare.value() + codeDeclare.group())
+            .code(codeDeclare.value())
             .msg(message)
             .cause(cause)
             .debug(debugMsg)

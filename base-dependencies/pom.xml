@@ -100,11 +100,6 @@
       </dependency>
       <dependency>
         <groupId>com.moyu.framework</groupId>
-        <artifactId>base-mybatis-starter</artifactId>
-        <version>${base.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.moyu.framework</groupId>
         <artifactId>base-web-starter</artifactId>
         <version>${base.version}</version>
       </dependency>

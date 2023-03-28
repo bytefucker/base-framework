@@ -43,6 +43,22 @@
       <groupId>com.moyu.framework</groupId>
       <artifactId>base-foundation-core</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.moyu.framework</groupId>
+      <artifactId>base-foundation-code</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.moyu.framework</groupId>
+      <artifactId>base-foundation-message</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.moyu.framework</groupId>
+      <artifactId>base-foundation-exception</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.moyu.framework</groupId>
+      <artifactId>base-foundation-format</artifactId>
+    </dependency>
   </dependencies>
 
 </project>

@@ -27,6 +27,7 @@ public class SecurityConfig {
   @Bean
   public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
     http.authorizeHttpRequests()
+        .antMatchers("/api/**").authenticated()
         .anyRequest().permitAll()
         .and().formLogin(Customizer.withDefaults());
     return http.build();

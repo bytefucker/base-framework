@@ -14,6 +14,7 @@ public interface Convert<E extends Entity<?>, V extends VO> {
 
   /**
    * VO转实体
+   *
    * @param v
    * @return
    */
@@ -21,6 +22,7 @@ public interface Convert<E extends Entity<?>, V extends VO> {
 
   /**
    * 实体转VO
+   *
    * @param e
    * @return
    */

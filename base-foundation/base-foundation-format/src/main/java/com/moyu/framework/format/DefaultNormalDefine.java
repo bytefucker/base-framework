@@ -13,6 +13,6 @@ public enum DefaultNormalDefine implements NormalDefine {
   /**
    * 成功
    */
-  @NormalDeclare(code = @CodeDeclare(value = 0))
+  @NormalDeclare(code = @CodeDeclare(value = 0, msg = "成功"))
   SUCCESS
 }

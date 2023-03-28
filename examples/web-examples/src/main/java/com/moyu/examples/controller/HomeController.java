@@ -1,5 +1,6 @@
 package com.moyu.examples.controller;
 
+import com.moyu.framework.format.DefaultErrorDefine;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,11 @@ public class HomeController {
   public Object index() {
     Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
     return authentication;
+  }
+
+  @RequestMapping("/exception")
+  public void exception() {
+    throw DefaultErrorDefine.SERVER_ERROR.exception();
   }
 
 }

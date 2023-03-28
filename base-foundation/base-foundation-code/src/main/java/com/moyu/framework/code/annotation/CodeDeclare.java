@@ -16,14 +16,9 @@ public @interface CodeDeclare {
   int value();
 
   /**
-   * 组
-   */
-  int group() default 0;
-
-  /**
    * 码说明
    */
-  String msg() default "";
+  String msg();
 
   /**
    * i18n key

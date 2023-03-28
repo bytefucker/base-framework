@@ -1,5 +1,6 @@
 package com.moyu.examples.service;
 
+import com.moyu.examples.domain.model.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 /**
@@ -10,4 +11,5 @@ import org.springframework.security.core.userdetails.UserDetailsService;
  */
 public interface UserService extends UserDetailsService {
 
+  User getById(Long id);
 }

@@ -12,6 +12,6 @@ public enum DefaultErrorDefine implements ErrorDefine {
   /**
    * 服务器错误
    */
-  @ErrorDeclare(code = @CodeDeclare(value = 10000))
+  @ErrorDeclare(code = @CodeDeclare(value = 10000, msg = "服务器内部错误"))
   SERVER_ERROR()
 }

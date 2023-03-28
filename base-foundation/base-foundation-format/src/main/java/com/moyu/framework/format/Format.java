@@ -1,6 +1,5 @@
 package com.moyu.framework.format;
 
-import com.moyu.framework.code.CodeParser;
 import com.moyu.framework.code.annotation.CodeDeclare;
 import com.moyu.framework.message.i18n.Section;
 import com.moyu.framework.message.support.I18nMessageSupport;
@@ -15,6 +14,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * yhz
+ *
  * @author
  */
 public interface Format {
@@ -37,16 +38,17 @@ public interface Format {
    * @return CodeDeclare
    */
   default CodeDeclare codeDeclare() {
-    CodeDeclare code = null;
     // 判断是否按规范使用了枚举
-    if (this instanceof Enum) {
-      try {
-        Enum<?> em = (Enum<?>) this;
-        // 获取注解信息
-        code = CodeParser.parse(code(this.getClass().getField(em.name())), em.name());
-      } catch (NoSuchFieldException e) {
-        logger.warn("code parser filed:", e);
-      }
+    if (!(this instanceof Enum)) {
+      return null;
+    }
+    CodeDeclare code = null;
+    try {
+      Enum<?> em = (Enum<?>) this;
+      // 获取注解信息
+      code = code(this.getClass().getField(em.name()));
+    } catch (NoSuchFieldException e) {
+      logger.warn("code parser filed:", e);
     }
     return code;
   }
@@ -59,7 +61,7 @@ public interface Format {
   default int code() {
     CodeDeclare code = codeDeclare();
     if (code != null) {
-      return code.group() + code.value();
+      return code.value();
     }
     logger.error("获取code码失败");
     return -1;

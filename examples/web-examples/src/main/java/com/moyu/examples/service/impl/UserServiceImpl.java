@@ -42,4 +42,9 @@ public class UserServiceImpl implements UserService {
         //.disabled(Enabled.FALSE.getValue().equals(user.getEnable()))
         .build();
   }
+
+  @Override
+  public User getById(Long id) {
+    return userMapper.selectById(id);
+  }
 }
