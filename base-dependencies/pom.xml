@@ -24,12 +24,7 @@
     <guava.retrying.version>2.0.0</guava.retrying.version>
     <commons.io.version>2.6</commons.io.version>
     <swagger.version>3.0.0</swagger.version>
-    <mybatis.version>3.5.10</mybatis.version>
-    <mybatis-spring.version>2.0.7</mybatis-spring.version>
-    <mybatis-spring-boot.version>2.2.2</mybatis-spring-boot.version>
-    <mybatis.provider.version>2.1.1</mybatis.provider.version>
-    <mybatis.mappper.version>2.0.0</mybatis.mappper.version>
-    <pagehelper-spring-boot-starter.version>1.4.3</pagehelper-spring-boot-starter.version>
+    <mybatis-plus.version>3.5.0</mybatis-plus.version>
     <flyway.version>7.15.0</flyway.version>
   </properties>
 
@@ -137,34 +132,14 @@
       </dependency>
       <!--mybatis-->
       <dependency>
-        <groupId>org.mybatis</groupId>
-        <artifactId>mybatis</artifactId>
-        <version>${mybatis.version}</version>
+        <groupId>com.baomidou</groupId>
+        <artifactId>mybatis-plus</artifactId>
+        <version>${mybatis-plus.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.mybatis</groupId>
-        <artifactId>mybatis-spring</artifactId>
-        <version>${mybatis-spring.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.mybatis.spring.boot</groupId>
-        <artifactId>mybatis-spring-boot-starter</artifactId>
-        <version>${mybatis-spring-boot.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>io.mybatis</groupId>
-        <artifactId>mybatis-provider</artifactId>
-        <version>${mybatis.provider.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>io.mybatis</groupId>
-        <artifactId>mybatis-mapper</artifactId>
-        <version>${mybatis.mappper.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.github.pagehelper</groupId>
-        <artifactId>pagehelper-spring-boot-starter</artifactId>
-        <version>${pagehelper-spring-boot-starter.version}</version>
+        <groupId>com.baomidou</groupId>
+        <artifactId>mybatis-plus-boot-starter</artifactId>
+        <version>${mybatis-plus.version}</version>
       </dependency>
       <!--覆盖flyway版本以支持mysql5.7-->
       <dependency>
