@@ -1,6 +1,7 @@
 server:
   port: 8080
 
+
 spring:
   application:
     name: web-examples
@@ -36,4 +37,8 @@ web:
 mybatis:
   mapper-locations: classpath:mapper/*
 
+
+springdoc:
+  swagger-ui:
+    persist-authorization: true
 

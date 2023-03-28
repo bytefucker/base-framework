@@ -26,6 +26,7 @@
     <swagger.version>3.0.0</swagger.version>
     <mybatis-plus.version>3.5.0</mybatis-plus.version>
     <flyway.version>7.15.0</flyway.version>
+    <springdoc-openapi.version>1.6.15</springdoc-openapi.version>
   </properties>
 
   <dependencyManagement>
@@ -146,6 +147,12 @@
         <groupId>org.flywaydb</groupId>
         <artifactId>flyway-core</artifactId>
         <version>${flyway.version}</version>
+      </dependency>
+      <!--swagger-doc-->
+      <dependency>
+        <groupId>org.springdoc</groupId>
+        <artifactId>springdoc-openapi-ui</artifactId>
+        <version>${springdoc-openapi.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

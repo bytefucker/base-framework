@@ -1,4 +1,4 @@
-package com.moyu.framework.swagger;
+package com.moyu.examples.config;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeIn;
@@ -6,25 +6,23 @@ import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
 import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.security.SecurityScheme;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * SwaggerConfig
+ * Swagger3Config
  *
- * @author yihongzhi
- * @date 2022/8/17
+ * @author yhz
+ * @date 2023/3/28
  */
-@EnableConfigurationProperties(SwaggerConfigurationProperties.class)
 @Configuration
 @OpenAPIDefinition(
     info = @Info(
-        title = "${framework.swagger.title}",
-        version = "${framework.swagger.version}"
+        title = "demo",
+        version = "1.0"
     ),
     security = @SecurityRequirement(name = "token")
 )
 @SecurityScheme(type = SecuritySchemeType.HTTP, name = "token", scheme = "bearer", in = SecuritySchemeIn.HEADER)
-public class SwaggerConfiguration {
+public class Swagger3Config {
 
 }

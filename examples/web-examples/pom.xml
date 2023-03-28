@@ -23,7 +23,23 @@
   <dependencies>
     <dependency>
       <groupId>com.moyu.framework</groupId>
-      <artifactId>base-web-starter</artifactId>
+      <artifactId>base-foundation-format</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
     </dependency>
     <dependency>
       <groupId>mysql</groupId>
@@ -44,6 +60,11 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui -->
+    <dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-ui</artifactId>
     </dependency>
   </dependencies>
 

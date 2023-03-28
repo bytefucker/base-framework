@@ -3,7 +3,7 @@ package com.moyu.examples.controller;
 import com.moyu.framework.format.DefaultErrorDefine;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HomeController {
 
-  @RequestMapping("/")
-  public Object index() {
+  @GetMapping("/")
+  public Authentication index() {
     Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
     return authentication;
   }
 
-  @RequestMapping("/exception")
+  @GetMapping("/exception")
   public void exception() {
     throw DefaultErrorDefine.SERVER_ERROR.exception();
   }
