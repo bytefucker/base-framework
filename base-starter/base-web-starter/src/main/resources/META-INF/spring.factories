@@ -1,1 +1,2 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.moyu.framework.web.WebConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.moyu.framework.web.WebConfiguration

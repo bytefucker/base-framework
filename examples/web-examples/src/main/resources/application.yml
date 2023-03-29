@@ -22,23 +22,22 @@ logging:
         examples:
           mapper: debug
 
+framework:
+  web:
+    cors:
+      enable: true
+      allowed-headers: [ '*' ]
+      allowed-methods: [ '*' ]
+      allowed-origins: [ '*' ]
+      max-age: 3600
+  swagger:
+    title: web-examples
+    description: web-examples
+    version: 1.0.0
 
-web:
-  enable-rest-wrapper: true
-  cors:
-    enable: true
-    allowed-headers: [ '*' ]
-    allowed-methods: [ '*' ]
-    allowed-origins: [ '*' ]
-    max-age: 3600
 
 
 
 mybatis:
   mapper-locations: classpath:mapper/*
-
-
-springdoc:
-  swagger-ui:
-    persist-authorization: true
 

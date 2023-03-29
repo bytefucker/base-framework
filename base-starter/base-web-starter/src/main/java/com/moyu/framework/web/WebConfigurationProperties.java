@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
 
 /**
  * WebConfigurationProperties
@@ -12,13 +13,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @date 2022/10/26
  */
 @Data
+@Component
 @ConfigurationProperties("framework.web")
 public class WebConfigurationProperties {
-
-  /**
-   * 打开rest请求包装
-   */
-  private Boolean enableRestWrapper = true;
 
   /**
    * 跨域请求支持
@@ -35,5 +32,4 @@ public class WebConfigurationProperties {
     private List<String> allowedHeaders = new ArrayList<>();
     private Long maxAge = 3600L;
   }
-
 }

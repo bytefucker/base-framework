@@ -1,30 +1,31 @@
 package com.moyu.framework.swagger;
 
-import io.swagger.v3.oas.annotations.OpenAPIDefinition;
-import io.swagger.v3.oas.annotations.enums.SecuritySchemeIn;
-import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
-import io.swagger.v3.oas.annotations.info.Info;
-import io.swagger.v3.oas.annotations.security.SecurityRequirement;
-import io.swagger.v3.oas.annotations.security.SecurityScheme;
+import io.swagger.v3.oas.models.info.Info;
+import org.springdoc.core.SpringDocConfiguration;
+import org.springdoc.core.customizers.OpenApiCustomiser;
+import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Bean;
 
 /**
  * SwaggerConfig
  *
- * @author yihongzhi
+ * @author yhz
  * @date 2022/8/17
  */
 @EnableConfigurationProperties(SwaggerConfigurationProperties.class)
-@Configuration
-@OpenAPIDefinition(
-    info = @Info(
-        title = "${framework.swagger.title}",
-        version = "${framework.swagger.version}"
-    ),
-    security = @SecurityRequirement(name = "token")
-)
-@SecurityScheme(type = SecuritySchemeType.HTTP, name = "token", scheme = "bearer", in = SecuritySchemeIn.HEADER)
+@AutoConfigureBefore(value = {SpringDocConfiguration.class})
 public class SwaggerConfiguration {
+
+  @Bean
+  public OpenApiCustomiser openApiCustomiser(SwaggerConfigurationProperties config) {
+    return openApi -> {
+      Info info = new Info();
+      info.setTitle(config.getTitle());
+      info.setDescription(config.getDescription());
+      info.setVersion(config.getVersion());
+      openApi.setInfo(info);
+    };
+  }
 
 }

@@ -23,7 +23,6 @@
     <mapstruct.version>1.5.2.Final</mapstruct.version>
     <guava.retrying.version>2.0.0</guava.retrying.version>
     <commons.io.version>2.6</commons.io.version>
-    <swagger.version>3.0.0</swagger.version>
     <mybatis-plus.version>3.5.0</mybatis-plus.version>
     <flyway.version>7.15.0</flyway.version>
     <springdoc-openapi.version>1.6.15</springdoc-openapi.version>
@@ -124,12 +123,6 @@
         <groupId>commons-io</groupId>
         <artifactId>commons-io</artifactId>
         <version>${commons.io.version}</version>
-      </dependency>
-      <!-- https://mvnrepository.com/artifact/io.springfox/springfox-boot-starter -->
-      <dependency>
-        <groupId>io.springfox</groupId>
-        <artifactId>springfox-boot-starter</artifactId>
-        <version>${swagger.version}</version>
       </dependency>
       <!--mybatis-->
       <dependency>
