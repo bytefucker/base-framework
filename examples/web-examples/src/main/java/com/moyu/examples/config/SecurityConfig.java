@@ -1,6 +1,5 @@
 package com.moyu.examples.config;
 
-import com.moyu.examples.security.TokenLoginConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -31,9 +30,8 @@ public class SecurityConfig {
         .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
         .and()
         .authorizeHttpRequests()
-        .anyRequest().authenticated()
-        .and()
-        .apply(new TokenLoginConfigurer<>());
+        .antMatchers("/swagger-ui*/**", "/v3/api-docs/**").permitAll()
+        .anyRequest().authenticated();
     return http.build();
   }
 
