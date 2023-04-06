@@ -22,7 +22,7 @@
       <dependency>
         <artifactId>base-dependencies</artifactId>
         <groupId>com.moyu.framework</groupId>
-        <version>${base.version}</version>
+        <version>${revision}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
