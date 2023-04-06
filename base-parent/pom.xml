@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>base-framework</artifactId>
+    <groupId>com.moyu.framework</groupId>
+    <version>${revision}</version>
+  </parent>
+
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>base-parent</artifactId>
+  <packaging>pom</packaging>
+
+  <properties>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <artifactId>base-dependencies</artifactId>
+        <groupId>com.moyu.framework</groupId>
+        <version>${base.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+
+    </pluginManagement>
+  </build>
+</project>

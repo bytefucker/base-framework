@@ -5,9 +5,9 @@
 
   <parent>
     <groupId>com.moyu.framework</groupId>
-    <artifactId>base-dependencies</artifactId>
+    <artifactId>base-parent</artifactId>
     <version>${revision}</version>
-    <relativePath>../../base-dependencies</relativePath>
+    <relativePath>../../base-parent</relativePath>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
