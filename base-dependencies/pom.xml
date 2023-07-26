@@ -26,6 +26,7 @@
     <mybatis-plus.version>3.5.0</mybatis-plus.version>
     <flyway.version>7.15.0</flyway.version>
     <springdoc-openapi.version>1.6.15</springdoc-openapi.version>
+    <openai-sdk.version>1.0.15</openai-sdk.version>
   </properties>
 
   <dependencyManagement>
@@ -146,6 +147,11 @@
         <groupId>org.springdoc</groupId>
         <artifactId>springdoc-openapi-ui</artifactId>
         <version>${springdoc-openapi.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.unfbx</groupId>
+        <artifactId>chatgpt-java</artifactId>
+        <version>${openai-sdk.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
